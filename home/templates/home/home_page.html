@@ -1,9 +1,15 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags  %}
+{% load wagtailcore_tags wagtailimages_tags  %}
 {% block content %}
 
 <h2>{{ page.title }}</h2>
 <h4>{{ page.subtitle }}</h4>
 <p>{{ page.body | richtext }}</p>
+
+
+<hr>
+{% image page.image fill-150x150-c50 format-jpeg %}
+{% image page.image fill-400x330 format-webp-lossless %}
+
 
 {% endblock content %}
