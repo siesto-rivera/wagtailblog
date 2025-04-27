@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "home",
     "search",
     "images",
+    "documents",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -180,6 +181,8 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 
 WAGTAILIMAGES_IMAGE_MODEL = "images.CustomImage"
 WAGTAILIMAGES_EXTENSIONS = ["jpg", "jpeg", "gif", "png", "svg", "webp"]
+
+WAGTAILDOCS_DOCUMENT_MODEL = "documents.CustomDocument"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
