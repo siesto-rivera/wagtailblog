@@ -14,6 +14,7 @@
 
 <img src="{{ custom_img.url }}" alt="" />
 
-
-
+<h3>Dynamic image serve view</h3>
+{% image_url page.image "fill-400x330|jpegquality-99" as custom_img2  %}
+<img src="{{ custom_img2 }}" alt="" />
 {% endblock content %}
