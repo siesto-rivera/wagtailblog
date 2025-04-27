@@ -10,6 +10,10 @@
 <hr>
 {% image page.image fill-150x150-c50 format-jpeg %}
 {% image page.image fill-400x330 format-webp-lossless %}
+{% image page.image max-400x330 as custom_img %}
+
+<img src="{{ custom_img.url }}" alt="" />
+
 
 
 {% endblock content %}
