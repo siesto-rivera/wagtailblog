@@ -7,6 +7,8 @@ from wagtail.models import Page
 class BlogIndex(Page):
     template = 'blogpages/blog_index.html'
     max_count = 1
+    parent_page_types = ['home.HomePage']
+    subpage_types = ['blogpages.BlogDetail']
 
     subtitle = models.CharField(max_length=100,  null=True)
     body = RichTextField(blank=True)
@@ -17,6 +19,8 @@ class BlogIndex(Page):
     ]
 
 class BlogDetail(Page):
+    parent_page_types = ['blogpages.BlogIndex']
+    subpage_types = []  #BlogDetail 의 child page 생성금지
     subtitle = models.CharField(max_length=100, null=True)
     body = RichTextField(blank=True, features=['h2', 'h3', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 'document-link'])
 
