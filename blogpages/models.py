@@ -6,6 +6,7 @@ from wagtail.models import Page
 
 class BlogIndex(Page):
     template = 'blogpages/blog_index.html'
+    max_count = 1
 
     subtitle = models.CharField(max_length=100,  null=True)
     body = RichTextField(blank=True)

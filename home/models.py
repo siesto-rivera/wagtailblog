@@ -8,6 +8,7 @@ from wagtail.models import Page
 
 
 class HomePage(Page):
+    max_count = 1
     subtitle = models.CharField("부제",max_length=100, blank=True, null=True)
     body = RichTextField(blank=True)
     image = models.ForeignKey(
