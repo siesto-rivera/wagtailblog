@@ -2,19 +2,8 @@
 {% load wagtailcore_tags wagtailimages_tags  %}
 {% block content %}
 
-<h2>{{ page.title }}</h2>
-<h4>{{ page.subtitle }}</h4>
-<p>{{ page.body | richtext }}</p>
+{% if page.custom_document %}
+    <a href="{{ page.custom_document.url }}">{{ page.custom_document.title }}</a>
+{% endif %}
 
-
-<hr>
-{% image page.image fill-150x150-c50 format-jpeg %}
-{% image page.image fill-400x330 format-webp-lossless %}
-{% image page.image max-400x330 as custom_img %}
-
-<img src="{{ custom_img.url }}" alt="" />
-
-<h3>Dynamic image serve view</h3>
-{% image_url page.image "fill-400x330|jpegquality-99" as custom_img2  %}
-<img src="{{ custom_img2 }}" alt="" />
 {% endblock content %}
