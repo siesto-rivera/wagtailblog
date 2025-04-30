@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% load django_bootstrap5 widget_tweaks wagtailcore_tags %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+  <script src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1 class="mb-4">블로그 글 작성하기</h1>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="id_title" class="form-label">제목</label>
+        {{ form.title|add_class:"form-control" }}
+      </div>
+
+      <div class="mb-3">
+        <label for="id_subtitle" class="form-label">부제목</label>
+        {{ form.subtitle|add_class:"form-control" }}
+      </div>
+
+      <div class="mb-3">
+
+        <label for="id_body" class="form-label">내용</label>
+        {{ form.body }}
+    </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary">작성 완료</button>
+    </form>
+  </div>
+{% endblock %}

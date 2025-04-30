@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    #추가 설치 모듈들
+    "django_bootstrap5",
+    "widget_tweaks",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
