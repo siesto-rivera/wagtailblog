@@ -7,4 +7,14 @@
 <h1>{{ page.subtitle }}</h1>
 {{ page.body | richtext}}
 
+
+<hr>
+
+{% for blog_post in blogpages %}
+    <a href="{{ blog_post.url }}">{{ blog_post.id}}. {{ blog_post.title }}</a>
+    {{ blog_post.subtitle }} {{ blog_post.latest_revision_created_at }}
+<hr>
+
+{% endfor %}
+
 {% endblock  %}

@@ -18,6 +18,11 @@ class BlogIndex(Page):
         FieldPanel('body'),
     ]
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request)
+        context['blogpages'] = BlogDetail.objects.live().public
+        return context
+
 class BlogDetail(Page):
     parent_page_types = ['blogpages.BlogIndex']
     subpage_types = []  #BlogDetail 의 child page 생성금지
